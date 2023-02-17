@@ -14,8 +14,7 @@ fn main() {
                         cur_stack += 1;
                         stacks[cur_stack]
                             .insert(0, it.next().expect("Expected a character after ["));
-                        it.next(); //']'
-                        it.next(); //' '
+                        it.nth(1); //"] "
                     }
                     ' ' => {
                         let end = it.next().expect("Expected a character");
@@ -23,8 +22,7 @@ fn main() {
                             move_input = true;
                             break;
                         }
-                        it.next();
-                        it.next();
+                        it.nth(1);
                         cur_stack += 1;
                     }
                     _ => {
